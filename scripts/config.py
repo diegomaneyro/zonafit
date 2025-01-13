@@ -4,9 +4,9 @@ from pymysql import MySQLError
 try:
     # Conexión a la base de datos
     conexion = pymysql.connect(
-        host='localhost',
-        user='root',
-        password='admin'
+        host='b8wul04cmbfc7sxziclq-mysql.services.clever-cloud.com',
+        user='udw2lxcelqndsjhz',
+        password='pdmTjfHhu5zo46JhLbXu'
     )
 
     if conexion.open:
@@ -28,8 +28,10 @@ except MySQLError as e:
     print(f"Error al conectar a MySQL: {e}")
 
 finally:
-    if 'connection' in locals() and conexion.open:
+    if 'conexion' in locals() and conexion.open:
         cursor.close()
+        conexion.close()
+    elif 'conexion' in locals():
         conexion.close()
         print("Conexión a MySQL cerrada.")
 
