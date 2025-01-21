@@ -2,11 +2,11 @@ from mysql.connector import pooling
 from mysql.connector import Error
 
 class Conexion:
-    DATABASE = 'zona_fit'
-    USERNAME = 'root'
-    PASSWORD = 'admin'
+    DATABASE = 'b8wul04cmbfc7sxziclq'
+    USERNAME = 'udw2lxcelqndsjhz'
+    PASSWORD = 'pdmTjfHhu5zo46JhLbXu'
     DB_PORT = '3306'
-    HOST = 'localhost'
+    HOST = 'b8wul04cmbfc7sxziclq-mysql.services.clever-cloud.com'
     POOL_SIZE = 5
     POOL_NAME = 'zona_fit_pool'
     pool = None
