@@ -1,7 +1,7 @@
 # archivo encargado de gestionar las operaciones de la app
 
-from cliente import Cliente
-from cliente_dao import ClienteDAO
+from app.cliente import Cliente
+from app.cliente_dao import ClienteDAO
 
 print('*** Clientes de Zona Fit (GYM) ***')
 opcion = None

@@ -1,9 +1,9 @@
 from flask import Flask, redirect, render_template, url_for
 from dotenv import load_dotenv
 import os
-from cliente import Cliente
-from cliente_dao import ClienteDAO
-from cliente_form import ClienteForm
+from app.cliente import Cliente
+from app.cliente_dao import ClienteDAO
+from app.cliente_form import ClienteForm
 
 app = Flask(__name__)
 
@@ -68,3 +68,5 @@ def eliminar(id):
     ClienteDAO.eliminar(cliente)
     return redirect(url_for("index"))
         
+if __name__=='__main__':
+    app.run(debug=True)

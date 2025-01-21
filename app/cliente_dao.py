@@ -1,6 +1,6 @@
 '''Clase encargada del CRUD que usa el patrón de diseño DAO'''
-from cliente import Cliente
-from conexion import Conexion
+from app.cliente import Cliente
+from app.conexion import Conexion
 
 
 class ClienteDAO:

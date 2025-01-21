@@ -2,8 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter.messagebox import showerror, showinfo
 
-from cliente import Cliente
-from cliente_dao import ClienteDAO
+from app.cliente import Cliente
+from app.cliente_dao import ClienteDAO
 
 class App(tk.Tk):
     COLOR_VENTANA = '#1d2d44'
