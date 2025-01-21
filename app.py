@@ -1,10 +1,22 @@
 from flask import Flask, redirect, render_template, url_for
-
+from dotenv import load_dotenv
+import os
 from cliente import Cliente
 from cliente_dao import ClienteDAO
 from cliente_form import ClienteForm
 
 app = Flask(__name__)
+
+# Cargar variables de entorno
+load_dotenv()
+
+# Configuración de la base de datos usando variables de entorno
+app.config['MYSQL_DATABASE'] = os.getenv('MYSQL_DATABASE')
+app.config['MYSQL_USER'] = os.getenv('MYSQL_USER')
+app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD')
+app.config['MYSQL_PORT'] = os.getenv('MYSQL_PORT')
+app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST')
+
 
 app.config['SECRET_KEY'] = 'lkñlsdksdsldñsld'
 titulo_app = "Zona Fit (GYM)"

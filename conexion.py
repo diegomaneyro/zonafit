@@ -1,12 +1,21 @@
-from mysql.connector import pooling
-from mysql.connector import Error
+from mysql.connector import pooling, Error
+from dotenv import load_dotenv
+import os
+import logging
+
+# Configuración del logger
+logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# carga las variables de entorno desde el archivo .env
+load_dotenv()
+
 
 class Conexion:
-    DATABASE = 'b8wul04cmbfc7sxziclq'
-    USERNAME = 'udw2lxcelqndsjhz'
-    PASSWORD = 'pdmTjfHhu5zo46JhLbXu'
-    DB_PORT = '3306'
-    HOST = 'b8wul04cmbfc7sxziclq-mysql.services.clever-cloud.com'
+    DATABASE = os.getenv('MYSQL_DATABASE')
+    USERNAME = os.getenv('MYSQL_USER')
+    PASSWORD = os.getenv('MYSQL_PASSWORD')
+    DB_PORT = os.getenv('MYSQL_PORT')
+    HOST = os.getenv('MYSQL_HOST')
     POOL_SIZE = 5
     POOL_NAME = 'zona_fit_pool'
     pool = None
@@ -19,14 +28,14 @@ class Conexion:
                     pool_name = cls.POOL_NAME,
                     pool_size = cls.POOL_SIZE,
                     host = cls.HOST,
-                    port = cls.DB_PORT,
+                    port = int(cls.DB_PORT),
                     database = cls.DATABASE,
                     user = cls.USERNAME,
                     password = cls.PASSWORD
                 )
                 return cls.pool
             except Error as e:
-                print(f'Ocurrio un error al obtener pool: {e}')
+                logging.error(f'Ocurrió un error al obtener el pool de conexiones: {e}')
         else:
             return cls.pool
 
