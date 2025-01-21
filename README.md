@@ -19,36 +19,18 @@ Esta aplicación permite realizar diversas operaciones sobre los clientes del gi
 - **Eliminar clientes:** Permite eliminar registros de clientes de la base de datos.
 - **Visualizar la lista de clientes:** Muestra un listado completo de todos los clientes registrados.
 
-## Instalación
+## Capturas de Pantalla
 
-1. Clona el repositorio:
-    ```sh
-    git clone <URL_DEL_REPOSITORIO>
-    ```
-2. Navega al directorio del proyecto:
-    ```sh
-    cd zona_fit
-    ```
-3. Crea y activa un entorno virtual:
-    ```sh
-    python -m venv venv
-    source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
-    ```
-4. Instala las dependencias:
-    ```sh
-    pip install -r requirements.txt
-    ```
+Aquí encntrara screenshot de la app
 
-## Configuración de la Base de Datos
+### Página de Inicio
 
-1. Asegúrate de tener MySQL instalado y en funcionamiento.
-2. Ejecuta el script SQL para configurar la base de datos:
-    ```sh
-    python scripts/config.py
-    ```
+![Página de Inicio](static/image/screenshot/home.png)
 
-## Ejecución de la Aplicación
+## Seguridad
 
-1. Inicia la aplicación Flask:
-    ```sh
-    flask
+Para mejorar la seguridad de la aplicación, se han implementado las siguientes medidas:
+
+- **Uso de variables de entorno:** Las credenciales de la base de datos y otra información sensible no se incluyen en código duro, sino que se almacenan en variables de entorno en un archivo `.env`. Esto evita la exposición de credenciales en el código fuente.
+
+- **Consultas Parametrizadas:** Todas las consultas a la base de datos utilizan sentencias preparadas y consultas parametrizadas para prevenir la inyección SQL. 
