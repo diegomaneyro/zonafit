@@ -1,12 +1,17 @@
 import pymysql
 from pymysql import MySQLError
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 try:
     # Conexión a la base de datos
     conexion = pymysql.connect(
-        host='b8wul04cmbfc7sxziclq-mysql.services.clever-cloud.com',
-        user='udw2lxcelqndsjhz',
-        password='pdmTjfHhu5zo46JhLbXu'
+        host= os.getenv('MYSQL_DATABASE'),
+        user= os.getenv('MYSQL_USER'),
+        password= os.getenv('MYSQL_PASSWORD')
+        
     )
 
     if conexion.open:
