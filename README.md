@@ -2,6 +2,9 @@
 
 Zona Fit es una aplicación web desarrollada con Flask y MySQL para la gestión integral de clientes de un gimnasio.
 
+## Deploy
+[Demo](https://zonafit.onrender.com/)
+
 ## Descripción
 
 Esta aplicación permite realizar diversas operaciones sobre los clientes del gimnasio, tales como la creación, edición, eliminación y visualización de registros. La interfaz es intuitiva y fácil de usar, facilitando la administración de los datos de los clientes.
