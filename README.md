@@ -25,9 +25,7 @@ Aquí encntrara screenshot de la app
 
 ### Página de Inicio
 
-
-![Página de Inicio](static/image/screenshot/home.png)
-![Página de Inicio](./static/image/screenshot/home.png)
+![home](https://github.com/user-attachments/assets/812c4b39-517c-47db-b32c-2654339bdcb3)
 
 ## Seguridad
 
