@@ -25,7 +25,7 @@ Aquí encntrara screenshot de la app
 
 ### Página de Inicio
 
-![Página de Inicio](../static/image/screenshot/home.png)
+![Página de Inicio](./static/image/screenshot/home.png)
 
 ## Seguridad
 
